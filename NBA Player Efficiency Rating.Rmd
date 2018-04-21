@@ -73,10 +73,6 @@ stats$names <- replace(stats$names, stats$names == "Otto Porter Jr.",
 stats$names <- replace(stats$names, stats$names == "TJ Warren", 
                        "T.J. Warren") 
 
-# # I will not use the substr until the length of the full string (length(merged$team)),
-# # because I will also solve the problem of mutliple teams for one 
-# # player, considering only the  first team
-# merged$team1 <- substr(merged$team, 2, length(merged$team))
 merged <- merge(x = stats, 
                 y = contracts[ , c("names", "X2017.18", "Tm")], 
                 by = "names", all.x = TRUE)
@@ -140,7 +136,7 @@ plot_ly(merged, x = merged$PER, y = merged$salaryMln,
 ```
 
 
-## Some quick insight:
+## Some quick insights:
 
 The most efficient player at the lowest salary is *Karl-Anthony Towns* from Minnesota Timberwolves, who had an efficiency rating of 24.99 during the regular season - very close to players like Russell Westbrook, LaMarcus Aldridge, Kyrie Irving - having a salary more than 3 times lower than the ones of its All-Star colleagues (6.22 Mln).
 
